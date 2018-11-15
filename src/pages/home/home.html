@@ -1,0 +1,107 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<div padding>
+
+  <div *ngIf="tab==1" style="background-color: black;height: 100%; width: 100%;">
+    CHAT
+  </div>
+  <div *ngIf="tab==2" style="background-color: blue;height: 100%; width: 100%;">
+    <div>
+      <ion-row>
+        <ion-col col-10>
+          MR_PUTITA
+        </ion-col>
+        <ion-col col-2>
+          <button ion-button color="primary" (tap)="cambiarTap(1)" outline icon-only>
+            <ion-icon name="medkit"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+
+      <ion-scroll style="height: 400px;" scrollY="true">
+        <ion-row *ngIf="mostrarCategoria==1">
+          <ion-card *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20]" col-4 (tap)="ocultarCategoria()">
+            <img src="https://picsum.photos/50/50" />
+            <div class="card-title">Dogs</div>
+          </ion-card>
+        </ion-row>
+        <ion-list *ngIf="mostrarHilos==1">
+          <ion-item (tap)="muestraCategoria()">
+            backButton
+          </ion-item>
+          <ion-item *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18,19,20]" (tap)="abrirHilo(item)">
+              <ion-avatar item-start>
+                  <img src="https://picsum.photos/50/50">
+                </ion-avatar>
+                <h2>Titulo{{item}}</h2>
+                <p>I've had a pretty messed up day. If we just...</p>
+          </ion-item>
+        </ion-list>
+
+        <ion-card *ngIf="mostrarHiloCompleto==1">
+            <ion-item>
+              <ion-avatar item-start>
+                <img src="https://picsum.photos/50/50">
+              </ion-avatar>
+              <h2>Titulo1</h2>
+              <p>November 5, 1955</p>
+            </ion-item>
+          
+            <img src="img/advance-card-bttf.png">
+          
+            <ion-card-content>
+              <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+            </ion-card-content>
+          
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-start clear small>
+                  <ion-icon name="thumbs-up"></ion-icon>
+                  <div>12 Likes</div>
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button icon-start clear small>
+                  <ion-icon name="text"></ion-icon>
+                  <div>4 Comments</div>
+                </button>
+              </ion-col>
+              <ion-col center text-center>
+                <ion-note>
+                  11h ago
+                </ion-note>
+              </ion-col>
+            </ion-row>
+          
+          </ion-card>
+        
+      </ion-scroll>
+
+
+    </div>
+  </div>
+  <div *ngIf="tab==3" style="background-color: red;height: 100%; width: 100%;">
+    lkdjalkdja
+  </div>
+  <ion-row>
+    <ion-col col-4><button ion-button block color="primary" (tap)="cambiarTap(1)" outline icon-only>
+        <ion-icon name="medkit"></ion-icon>
+      </button></ion-col>
+    <ion-col col-4><button ion-button block color="primary" (tap)="cambiarTap(2)" outline icon-only>
+        <ion-icon name="glasses"></ion-icon>
+      </button></ion-col>
+    <ion-col col-4><button ion-button block color="primary" (tap)="cambiarTap(3)" outline icon-only>
+        <ion-icon name="cart"></ion-icon>
+      </button></ion-col>
+
+
+
+
+  </ion-row>
+</div>
